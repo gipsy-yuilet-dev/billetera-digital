@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alke Wallet - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-light d-flex align-items-center justify-content-center vh-100">
+
+    <div class="card shadow-lg p-4" style="width: 24rem; border-radius: 15px;">
+        <div class="card-body text-center">
+            <h2 class="mb-4 text-primary fw-bold">Alke Wallet</h2>
+            <p class="text-muted">Inicia sesión para gestionar tus activos</p>
+            
+            <form id="loginForm">
+                <div class="mb-3 text-start">
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="email" placeholder="usuario@ejemplo.com" required>
+                </div>
+                <div class="mb-3 text-start">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="password" placeholder="******" required>
+                </div>
+                <div id="success-msg" class="alert alert-success d-none" role="alert">
+                    <i class="fas fa-check-circle"></i> <span id="success-text">Inicio de sesión exitoso</span>
+                </div>
+                <div id="error-msg" class="alert alert-danger d-none" role="alert">
+                    <i class="fas fa-exclamation-circle"></i> <span id="error-text">Credenciales incorrectas. Intenta de nuevo.</span>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 py-2 btn-lg">Ingresar</button>
+            </form>
+        </div>
+        <div class="card-footer text-center bg-white border-0 mt-3">
+            <small class="text-muted">¿No tienes cuenta? <a href="register.html">Regístrate</a></small>
+        </div>
+    </div>
+
+    <!-- jQuery (requerido primero) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- 1. Configuración (primero) -->
+    <script src="js/config/constants.js"></script>
+    
+    <!-- 2. Servicios base -->
+    <script src="js/services/storageService.js"></script>
+    
+    <!-- 4. Utilidades -->
+    <script src="js/utils/helpers.js"></script>
+    
+    <!-- 5. Servicios específicos -->
+    <script src="js/services/authService.js"></script>
+    
+    <!-- 6. Página específica (último) -->
+    <script src="js/pages/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depositar - My Wallet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+   </head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-dark bg-primary mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="menu.html"><i class="fas fa-arrow-left me-2"></i> Volver</a>
+            <div class="d-flex align-items-center gap-3">
+                <div class="text-white text-end d-none d-md-block">
+                    <div class="fw-bold"><i class="fas fa-user-circle"></i> <span class="userName">Usuario</span></div>
+                    <small id="connectionInfo" class="text-white-50"><i class="fas fa-clock"></i> Conectado</small>
+                </div>
+                <span class="navbar-text text-white fw-bold">Depositar Dinero</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card shadow-lg deposit-card border-0 rounded-4">
+            <div class="card-body p-5">
+                <div class="text-center mb-4">
+                    <div class="bg-success bg-opacity-10 rounded-circle d-inline-flex p-3 mb-3">
+                        <i class="fas fa-arrow-down fa-3x text-success"></i>
+                    </div>
+                    <h3 class="fw-bold">Depositar Fondos</h3>
+                    <p class="text-muted">Agrega dinero a tu cuenta</p>
+                </div>
+
+                <form id="depositForm">
+                    <div class="mb-4">
+                        <label for="depositAmount" class="form-label fw-bold">Monto a Depositar</label>
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text bg-success text-white">$</span>
+                            <input type="number" class="form-control" id="depositAmount" 
+                                   placeholder="0.00" min="1" step="0.01" required
+                                   onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46">
+                        </div>
+                        <small class="text-muted">Solo se permiten números</small>
+                    </div>
+
+                    <!-- Montos Rápidos -->
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Montos Rápidos</label>
+                        <div class="d-flex flex-wrap justify-content-center">
+                            <button type="button" class="btn btn-outline-success amount-btn" data-amount="10">$10</button>
+                            <button type="button" class="btn btn-outline-success amount-btn" data-amount="20">$20</button>
+                            <button type="button" class="btn btn-outline-success amount-btn" data-amount="50">$50</button>
+                            <button type="button" class="btn btn-outline-success amount-btn" data-amount="100">$100</button>
+                            <button type="button" class="btn btn-outline-success amount-btn" data-amount="500">$500</button>
+                            <button type="button" class="btn btn-outline-success amount-btn" data-amount="1000">$1000</button>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="depositDescription" class="form-label fw-bold">Descripción (Opcional)</label>
+                        <input type="text" class="form-control" id="depositDescription" 
+                               placeholder="Ej: Depósito mensual, Ahorro, etc.">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="depositMethod" class="form-label fw-bold">Método de Depósito</label>
+                        <select class="form-select" id="depositMethod" required>
+                            <option value="">Selecciona un método</option>
+                            <option value="transfer">Transferencia Bancaria</option>
+                            <option value="cash">Efectivo</option>
+                            <option value="check">Cheque</option>
+                            <option value="other">Otro</option>
+                        </select>
+                    </div>
+
+                    <div id="success-msg" class="alert alert-success d-none" role="alert">
+                        <i class="fas fa-check-circle"></i> ¡Depósito realizado exitosamente!
+                    </div>
+                    <div id="error-msg" class="alert alert-danger d-none" role="alert">
+                        <i class="fas fa-exclamation-circle"></i> <span id="error-text"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-success btn-lg w-100">
+                        <i class="fas fa-plus-circle me-2"></i>Depositar Ahora
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery y Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Configuración y constantes -->
+    <script src="js/config/constants.js"></script>
+    
+    <!-- Servicios -->
+    <script src="js/services/storageService.js"></script>
+    <script src="js/utils/helpers.js"></script>
+    <script src="js/services/authService.js"></script>
+    <script src="js/services/transactionService.js"></script>
+    
+    <!-- Página específica -->
+    <script src="js/pages/deposit.js"></script>
+</body>
+</html>

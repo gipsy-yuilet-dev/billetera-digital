@@ -6,17 +6,7 @@
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=flat&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
 [![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=flat&logo=jquery&logoColor=white)](https://jquery.com/)
 
-Aplicación web **front-end** para gestión de finanzas personales, desarrollada con **arquitectura modular escalable**. Parte del portafolio profesional del **Módulo 2: Fundamentos del Desarrollo Front-end**.
-
-> ✅ **MIGRACIÓN COMPLETADA**: Proyecto refactorizado de código monolítico (1900 líneas) a **arquitectura modular profesional** con 15 archivos especializados.
-
-## 📷 Galería / Demo
-
-| Dashboard principal | Flujo de registro | Envío de dinero |
-| --- | --- | --- |
-| ![Dashboard](assets/screenshots/dashboard.png) | ![Registro](assets/screenshots/register.png) | ![Enviar Dinero](assets/screenshots/sendmoney.png) |
-![Dashboard](assets/screenshots/dashboard03Completo.png) | ![Registro](assets/screenshots/register.png) | ![Enviar Dinero](assets/screenshots/sendmoney.png)|
-> Guarda tus capturas en `assets/screenshots/` y usa rutas relativas para que funcionen tanto en GitHub como en local.
+Aplicación web **front-end** para gestión de finanzas personales, desarrollada con arquitectura modular escalable. Parte del portafolio profesional del **Módulo 2: Fundamentos del Desarrollo Front-end**.
 
 ## 🎯 Descripción del Proyecto
 
@@ -30,55 +20,20 @@ Aplicación web **front-end** para gestión de finanzas personales, desarrollada
 
 **Stack Tecnológico**: HTML5, CSS3, JavaScript ES6+, Bootstrap 5.3, jQuery 3.6
 
-## 🏛️ Arquitectura Modular
+## 🏛️ Arquitectura
 
-El proyecto utiliza una **arquitectura profesional en 5 capas**:
+El proyecto utiliza una **arquitectura modular y escalable**:
 
 ```
 📦 Capas de la Aplicación
-├── 🎨 UI Layer (11 páginas HTML + 11 módulos JS)
-├── ⚙️ Services Layer (Auth, Storage, Transactions)
-├── 🛠️ Utils Layer (30+ funciones helpers)
-├── 💾 Data Layer (localStorage con Storage Service)
-└── 🔧 Config Layer (150+ constantes centralizadas)
+├── 🎨 UI Layer (HTML + CSS + Pages)
+├── ⚙️ Services Layer (Business Logic)
+├── 🛠️ Utils Layer (Helpers & Validators)
+├── 💾 Data Layer (Storage Service)
+└── 🔧 Config Layer (Constants)
 ```
 
-### Estructura de Archivos
-```
-proyectoWallet/
-├── js/
-│   ├── config/
-│   │   └── constants.js          # 150+ constantes
-│   ├── services/
-│   │   ├── storageService.js     # Gestión localStorage
-│   │   ├── authService.js        # Autenticación
-│   │   └── transactionService.js # Transacciones
-│   ├── utils/
-│   │   └── helpers.js            # 30+ funciones útiles
-│   └── pages/
-│       ├── login.js
-│       ├── register.js
-│       ├── dashboard.js
-│       ├── deposit.js
-│       ├── sendmoney.js
-│       ├── transactions.js
-│       ├── contacts.js
-│       ├── accounts.js
-│       ├── budget.js
-│       ├── calendar.js
-│       └── currency.js
-└── docs/
-    ├── ARQUITECTURA.md           # Documentación técnica
-    ├── GUIA_MIGRACION.md         # Guía de migración
-    ├── QUICKSTART.md             # Inicio rápido
-    ├── MIGRACION_COMPLETADA.md   # Status de migración
-    └── GUIA_PRUEBAS.md           # Testing checklist
-```
-
-**📚 Documentación completa**: 
-- [Arquitectura Técnica](docs/ARQUITECTURA.md)
-- [Migración Completada](docs/MIGRACION_COMPLETADA.md)
-- [Guía de Pruebas](docs/GUIA_PRUEBAS.md)
+**Ver documentación completa**: [docs/ARQUITECTURA.md](docs/ARQUITECTURA.md)
 
 ## ✨ Características Principales
 
@@ -87,7 +42,6 @@ proyectoWallet/
 - Login seguro con manejo de sesiones
 - Presupuesto inicial configurable (≥$10,000)
 - Validación de campos en tiempo real
-- Protección de rutas (requiere autenticación)
 
 ### 🏦 Sistema Multi-Cuenta
 - **Múltiples cuentas por usuario**
